@@ -8,19 +8,17 @@ public class A510 {
         int n = sc.nextInt();
         int m = sc.nextInt();
         
-        // Tracks whether the '#' should be on the right side
         boolean rightHash = true; 
         
         for (int i = 1; i <= n; i++) {
             StringBuilder row = new StringBuilder();
             
             if (i % 2 == 1) {
-                // Odd rows are always completely filled with '#'
+
                 for (int j = 0; j < m; j++) {
                     row.append('#');
                 }
             } else {
-                // Even rows alternate the position of '#'
                 for (int j = 0; j < m; j++) {
                     if (rightHash && j == m - 1) {
                         row.append('#');
@@ -30,7 +28,6 @@ public class A510 {
                         row.append('.');
                     }
                 }
-                // Toggle the direction for the next even row
                 rightHash = !rightHash; 
             }
             System.out.println(row.toString());
