@@ -3,15 +3,19 @@ public class A1030 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(); 
-        String arr[] = sc.nextLine().split(" ");
-        boolean res = false;
-        for(String item : arr){
-            if(item.equals("1")){
-                res = true;
-                break;
+        boolean isHard = false;
+        
+        // Loop through all opinions
+        for (int i = 0; i < n; i++) {
+            int opinion = sc.nextInt();
+            if (opinion == 1) {
+                isHard = true;
             }
         }
-        
-        System.out.println(res?"HARD":"EASY");
+        if (isHard) {
+            System.out.println("HARD");
+        } else {
+            System.out.println("EASY");
+        }
     }
 }
